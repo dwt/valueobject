@@ -3,6 +3,10 @@
 
 from setuptools import setup, find_packages
 
+tests_require=[
+    'PythonicTestcase',
+],
+
 setup(
     name='valueobject',
     version='1.0.0',
@@ -12,8 +16,10 @@ setup(
     license='ISC',
     url='https://gitlab.com/rbuchholz/valueobject',
     packages=find_packages(),
-    extras_require=dict(
-        testing=['PythonicTestcase',],
+    test_suite="valueobject",
+    tests_require=tests_require,
+    extras_require = dict(
+        testing=tests_require,
     ),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
