@@ -24,13 +24,13 @@ tests_require=[
 
 setup(
     name='valueobject',
-    version='1.0.0',
+    version='1.0.1',
     description='ValueObject is a dict-like object that exposes keys as attributes.',
     long_description=readme(),
     author='Felix Schwarz, Martin Häcker, Robert Buchholz',
     author_email='rbu@goodpoint.de, spamfaenger@gmx.de',
     license='ISC',
-    url='https://gitlab.com/rbuchholz/valueobject',
+    url='https://github.com/rbu/valueobject',
     packages=find_packages(),
     test_suite="valueobject",
     tests_require=tests_require,
