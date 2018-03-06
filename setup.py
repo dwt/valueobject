@@ -11,11 +11,11 @@ def readme():
     from subprocess import CalledProcessError
     try:
         from subprocess import check_output
-        return str(check_output(['pandoc', '--from', 'markdown', '--to', 'rst', 'README.md']))
+        return check_output(['pandoc', '--from', 'markdown', '--to', 'rst', 'README.md']).decode('utf-8')
     except (ImportError, OSError, CalledProcessError) as error:
-        print('python2.7 and pandoc is required to get the description as rst (as required to get nice rendering in pypi) - using the original markdown instead.',
+        print('pandoc is required to get the description as rst (as required to get nice rendering in pypi) - using the original markdown instead.',
               'See http://johnmacfarlane.net/pandoc/')
-    return str(open(path.join(here, 'README.md')).read())
+    return open(path.join(here, 'README.md')).read().decode('utf-8')
 
 
 tests_require=[
@@ -24,7 +24,7 @@ tests_require=[
 
 setup(
     name='valueobject',
-    version='1.0.1',
+    version='1.0.2',
     description='ValueObject is a dict-like object that exposes keys as attributes.',
     long_description=readme(),
     author='Felix Schwarz, Martin Häcker, Robert Buchholz',
