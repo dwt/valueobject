@@ -6,18 +6,6 @@ from setuptools import setup, find_packages
 
 here = path.abspath(path.dirname(__file__))
 
-def readme():
-    "Falls back to just file().read() on any error, because the conversion to rst is only really relevant when uploading the package to pypi"
-    from subprocess import CalledProcessError
-    try:
-        from subprocess import check_output
-        return check_output(['pandoc', '--from', 'markdown', '--to', 'rst', 'README.md']).decode('utf-8')
-    except (ImportError, OSError, CalledProcessError) as error:
-        print('pandoc is required to get the description as rst (as required to get nice rendering in pypi) - using the original markdown instead.',
-              'See http://johnmacfarlane.net/pandoc/')
-    return open(path.join(here, 'README.md'), 'rb').read().decode('utf-8')
-
-
 tests_require=[
     'PythonicTestcase',
 ],
@@ -26,7 +14,8 @@ setup(
     name='valueobject',
     version='1.0.2',
     description='ValueObject is a dict-like object that exposes keys as attributes.',
-    long_description=readme(),
+    long_description=open(path.join(here, 'README.md'), 'rb').read().decode('utf-8'),
+    long_description_content_type='text/markdown',
     author='Felix Schwarz, Martin Häcker, Robert Buchholz',
     author_email='rbu@goodpoint.de, spamfaenger@gmx.de',
     license='ISC',
