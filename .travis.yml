@@ -1,15 +1,26 @@
 language: python
-python:
-  - "2.7"
-  - "3.6"
-  - "3.7"
-  - "3.8"
-  - "3.9"
-  - "3.10"
-  - "3.11"
-  - "nightly"
-  - "pypy"
-  - "pypy3"
+matrix:
+  include:
+    - python: "2.7"
+      dist: xenial
+    - python: "3.6"
+      dist: xenial
+    - python: "3.7"
+      dist: xenial
+    - python: "3.8"
+      dist: focal
+    - python: "3.9"
+      dist: focal
+    - python: "3.10"
+      dist: jammy
+    - python: "3.11"
+      dist: jammy
+    - python: "nightly"
+      dist: jammy
+    - python: "pypy"
+      dist: jammy
+    - python: "pypy3"
+      dist: jammy
 install:
   - pip install --upgrade pip
   - pip install .[testing]
