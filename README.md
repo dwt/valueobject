@@ -1,4 +1,4 @@
-# ValueObject [![Build Status](https://travis-ci.org/rbu/valueobject.svg?branch=master)](https://travis-ci.org/rbu/valueobject)
+# ValueObject [![Build Status](https://app.travis-ci.com/dwt/valueobject.svg?branch=master&status=created)](https://app.travis-ci.com/github/dwt/valueobject)
 
 License: ISC - See LICENSE file
 
