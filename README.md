@@ -27,3 +27,7 @@ access to get or set values.
  - All regular `object`, `dict` and `ValueObject` methods will be
    returned on attribute access. A key such as `copy` needs to be
    accessed via item access syntax (e.g. `valueobject['copy']`).
+
+## Changelog
+
+- 1.0.3: Minor build fixes, to make the setup.py file python3 safe. While the rest of the library was python3 safe all along, that file was not… 😬

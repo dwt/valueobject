@@ -12,7 +12,7 @@ tests_require=[
 
 setup(
     name='valueobject',
-    version='1.0.2',
+    version='1.0.3',
     description='ValueObject is a dict-like object that exposes keys as attributes.',
     long_description=open(path.join(here, 'README.md'), 'rb').read().decode('utf-8'),
     long_description_content_type='text/markdown',
